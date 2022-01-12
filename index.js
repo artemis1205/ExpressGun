@@ -2,7 +2,7 @@ const path = require('path');
 const express = require('express');
 const Gun = require('gun');
 const SEA = require("gun/sea");
-const cors = require('cors')
+
 
 const port = (process.env.PORT || 8080);
 const host = '0.0.0.0';
@@ -15,13 +15,6 @@ const server = app.listen(port, host);
 console.log(`server listening on http://${host}:${port}`);
 
 
-const corsOptions = {
-    origin: 'https://yourdomain.com',
-}
-
-app.get('/', cors(corsOptions), (req, res, next) => {
-    console.log("not allowed")
-})
 
 function logIn(msg) {
     console.log(`in msg:${JSON.stringify(msg)}.........`);
